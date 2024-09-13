@@ -25,6 +25,7 @@ jobs:
             sudo useradd -m Ubuntu 
             sudo adduser Ubuntu sudo
             echo 'Ubuntu:1234' | sudo chpasswd
+            pip3 install psutil
             sudo sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
             sudo apt-get update
             sudo apt-get install xfce4-terminal -y
@@ -45,7 +46,6 @@ jobs:
             pip3 install nbformat
             pip3 install gdown
             pip3 install pika
-            pip3 install psutil
             sudo apt install nautilus nano -y
             wget -O code.deb https://code.visualstudio.com/sha/download\?build\=stable\&os\=linux-deb-x64
             sudo dpkg --install code.deb
